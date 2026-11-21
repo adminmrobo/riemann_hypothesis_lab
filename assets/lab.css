@@ -233,3 +233,4 @@ nav.top .i18n-pick select{max-width:34vw}
 .dash table{background:#fff}
 .dash .ctrl label{flex-wrap:wrap;max-width:100%}
 @media (max-width:480px){.dash input[type=range]{width:190px}}
+@media (max-width:600px){.dash .svgnote{font-size:22px}}

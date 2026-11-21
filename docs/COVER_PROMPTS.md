@@ -1,25 +1,26 @@
-# 그림 지시문 — 하루의 첫 브리핑 (픽셀풍)
+# 그림 지시문 — 하루의 첫 브리핑 (16비트 RPG 픽셀아트)
 
-공통: 모든 그림은 **16-bit RPG pixel art**. 첨부한 캐릭터 기준 그림(fruitfly-lab-expressions)과 똑같은 그림체, 굵은 어두운 외곽선, 2~3단 음영. 흰 배경 우세, 틸·주황·남색 포인트. 글자는 넣지 않는다(제목은 페이지에서 얹음).
-만드는 순서: ① 표지 → 그림체 확인 → ② 장면 그림을 표지와 함께 참고 그림으로 올려 3~5장씩.
+> 연구실 해설 그림 지침: **모든 표지·대체 표지·장면 그림은 16비트 RPG 픽셀아트**로 받는다. 애니메이션 일러스트체로 받지 않는다.
+> 캐릭터는 fruitfly-lab-expressions 기준 그림을 참고 그림으로 함께 올리고, "같은 인물을 픽셀아트로" 다시 그리게 한다.
+> 받는 순서: ① cover_index를 먼저 받아 그림체를 확인 → ② 그 그림을 참고 그림으로 함께 올려 나머지를 같은 비율끼리 요청.
+> 크기: 표지 16:9 → 1600×900 WebP, 장면 3:2 → 1200×800 WebP(한 편 합계 600KB 이하). 목차 썸네일·og:image는 표지에서 잘라 별도 폴더에.
+> **실제로 붙이는 요청문은 [genspark_pixel/](genspark_pixel/) 꾸러미에 있다.** 이 문서는 전체 목록과 장면 요지다.
 
-| 순서 | 파일 이름 | 크기 | 장면 |
-|---|---|---|---|
-| 1 | cover.webp | 1600×900 | 표지 |
-| 2 | s1_sieve.webp | 1200×800 | 주판봇이 1~100 숫자판에서 배수를 지우는 장면 |
-| 3 | s2_lock.webp | 1200×800 | 하루가 자물쇠와 두 블록을 들고 설명, 모아가 갸웃 |
-| 4 | s3_count.webp | 1200×800 | 점점 낮아지는 막대 앞의 시아·모아 |
-| 5 | s4_estimate.webp | 1200×800 | 화이트보드의 두 선이 거의 겹침, 하루가 안도 |
-| 6 | s5_promise.webp | 1200×800 | 세로 가운데 줄에 빛나는 점들이 줄 서 있음, 초파리가 한 점을 가리킴 |
-| 7 | s6_benefit.webp | 1200×800 | 건물 기초 위에 층이 쌓이는 그림 앞의 박사 |
-| 8 | duel.webp | 1200×800 | 시아 vs 모아, 가운데 심판 주판봇 |
-| 9 | outro.webp | 1200×800 | 하루 안도의 미소, X1~X3 박수, 모아 승리 표정 |
+## 그림 전체 목록
+| 구분 | 파일 | 비율 | 장면 요지 | 들어갈 자리 |
+|---|---|---|---|---|
+| 새로 그림 | cover_index | 16:9 | 회의실 화이트보드(짧아지는 막대 + 가운데 줄 위 점 10개) 앞의 긴장한 하루, 손 든 시아·모아, 방청석 X1~X3 | index.html 표지 |
+| 새로 그림 | cover_briefing | 16:9 | 브리핑 5분 전, 심호흡하는 하루, 어깨를 두드리는 박사, 문틈의 X1~X3 | briefing.html 표지 |
+| 새로 그림 | scene_s1 | 3:2 | 10×10 타일판을 주판봇이 거르고 주황 타일만 남음, 블록 쪼개기 | 1단계 |
+| 새로 그림 | scene_s2 | 3:2 | 블록 두 개 → 자물쇠(즉시), 주판봇이 자물쇠 쪼개기에 진땀, 고르게 찬 서랍장, 작은 매미 | 2단계 |
+| 새로 그림 | scene_s3 | 3:2 | 갈수록 간격이 멀어지는 버스 정류장 길 | 3단계 |
+| 새로 그림 | scene_s4 | 3:2 | 거의 겹치는 두 선, 안도하는 하루, 일기예보 카드 | 4단계 |
+| 새로 그림 | scene_s5 | 3:2 | 가운데 줄 위 점 10개와 안전 띠, 초파리가 맨 아래 점을 돋보기로 | 5단계 |
+| 새로 그림 | scene_s6 | 3:2 | 기초 위에 층이 쌓이는 건물, 잠긴 채 빛나는 자물쇠 | 6단계 |
+| 새로 그림 | scene_duel | 3:2 | RPG 대결 화면 — 시아(계산기) vs 모아(눈금 노트), 심판 주판봇·하루 | 대결 |
+| 새로 그림 | scene_outro | 3:2 | 안도한 하루(물컵), 모아 승리, 시아 아쉬운 웃음, X1~X3 꽃가루 | 아웃트로 |
+| 표지에서 자름 | thumbs/index.webp · thumbs/briefing.webp | 960폭 | — | 목차 카드·공유 |
+| 재사용 | 캐릭터 표정 그림 | — | fruitfly-lab-expressions (박사·하루·초파리·주판봇·시아·모아·X1~X3) | 대화·대시보드 |
 
-## 1. 표지
-> 16-bit RPG style pixel art matching the attached reference images exactly (bold dark outline, 2-3 tone shading). Bright daytime research lab meeting room, clean white walls. A nervous young female assistant (sweat drop) stands at a whiteboard showing a simple bar chart that gets shorter and a single glowing teal vertical line with orange dots lined up on it. Two young female interns, one with black hair and one with beige hair, raise their hands with questions. A small abacus robot holds an abacus, a fruit-fly researcher holds a clipboard beside her. Three small audience characters in the back row look worried and supportive. Soft teal, orange and navy accents, white background dominant, generous empty space on the right for title text. No text. 16:9.
-
-## 6. 5단계 장면
-> Same pixel art style as the attached cover. White lab room. A tall teal vertical line on a large board with ten glowing orange dots neatly lined up along it. The fruit-fly researcher points at the lowest dot with a pointer, the assistant explains, two interns watch closely. Minimal, lots of white space. No text. 3:2.
-
-## 9. 아웃트로
-> Same pixel art style as the attached cover. The assistant smiles with relief holding a cup of water, the beige-haired intern looks proud (duel winner), the black-haired intern smiles sheepishly, three audience characters clap, the doctor gives a thumbs up. White room, confetti in teal and orange. No text. 3:2.
+## 하루 표정 흐름 (그림과 대사를 맞춤)
+표지·1~3단계: 긴장(땀방울) → 4단계: 안도 시작 → 5·6단계: 진지·자신감 → 아웃트로: 크게 안도

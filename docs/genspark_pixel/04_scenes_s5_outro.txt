@@ -1,0 +1,36 @@
+# 대화 4 — 장면 그림 5~6단계·대결·아웃트로
+
+[젠스파크에 붙이는 순서]
+1. refs 폴더의 캐릭터 기본 그림 10장(ref_*.png)을 먼저 올린다.
+2. cover_index.png를 "그림체 참고"로 함께 올린다.
+3. 아래 요청문을 그대로 붙인다. 한 대화에서 아래 장수만 만든다.
+4. 받은 그림을 저장 이름대로 저장한다.
+
+---
+
+Please create 4 images, aspect ratio 3:2, about 1200x800 each. Use the attached reference sprites for all characters.
+
+COMMON STYLE (apply to every image):
+16-bit SNES-era RPG pixel art, crisp pixel edges, limited palette, dithering allowed, no anti-aliased blur, no smooth anime shading, no 3D render. Bright daytime research lab: white walls and white floor tiles dominate the background, accents in soft teal, orange, navy and red. Characters must match the attached reference sprites exactly (same faces, hair, outfits), drawn as small chibi pixel sprites about 48–64 px tall in the scene:
+- Professor: spiky black hair with one white streak, teal rectangular glasses, white lab coat over black vest and tie.
+- Assistant Haru: long pink hair with a blue streak, two hair buns, lavender hoodie under a white lab coat. Today she is nervous (small sweat drop) unless the scene says otherwise.
+- Fruit-fly researcher: navy round helmet with big red compound eyes and blue tubes, black insect body in a white lab coat.
+- Abacus robot: beige boxy CRT-monitor head with a green pixel smile and a small antenna, wooden abacus belly, gray arms, tank treads.
+- Intern Sia: long straight black hair, black maid-style lab dress with white frilled apron and gray bow.
+- Intern Moa: long light-brown hair, white maid headband, mustard maid-style dress with white apron and red plaid bow.
+- Audience X1: small shadow-black chibi with a long black ponytail and a big pink bow, white dot eyes, pink cheeks.
+- Audience X2: small shadow-black chibi with a dark beret and round teal glasses.
+- Audience X3: small shadow-black chibi in a cat-ear hood with two gold-tipped hoodie strings.
+Do NOT draw any text, letters, numbers or symbols with writing. Number cards and boards are drawn as blank tiles or dots only.
+
+IMAGE 1 — save as scene_s5.png  (5단계: 리만 가설 = 약속)
+A tall board with a single glowing teal vertical line in the middle and ten orange dots neatly lined up on it going upward. A soft teal band (like a safe zone ribbon) wraps around a gently wobbling orange line below. The fruit-fly researcher points at the lowest dot with a magnifier, Haru explains seriously, Moa takes notes, the abacus robot shows a huge stack of checked papers and looks proud. X1, X2, X3 hold their breath.
+
+IMAGE 2 — save as scene_s6.png  (6단계: 약속이 지켜지면 좋은 점)
+A pixel building being built: a solid glowing foundation at the bottom, and many floors stacked above it lighting up one by one. Next to it, a padlock that stays firmly locked with a shield sparkle. The professor stands in front of the building giving a thumbs-up; the abacus robot looks sheepish next to the padlock; Haru smiles with confidence.
+
+IMAGE 3 — save as scene_duel.png  (대결: 소수 개수 맞히기)
+RPG battle screen layout: Sia on the left with a single big calculator, Moa on the right with a notebook full of small tally marks, four blank number cards floating between them. The abacus robot stands in the center as the referee counting on its abacus; Haru raises a small referee flag. X1, X2, X3 cheer from the stands.
+
+IMAGE 4 — save as scene_outro.png  (아웃트로 — 모아 승, 하루 안도)
+Haru smiles with big relief holding a cup of water (no more sweat), Moa jumps with a sparkle in a winner pose, Sia smiles a little sheepishly with a thumbs-up, the professor claps, the fruit-fly researcher and the abacus robot clap. X1, X2, X3 throw small teal and orange confetti. White room, warm ending mood.

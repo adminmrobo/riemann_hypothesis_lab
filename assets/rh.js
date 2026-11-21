@@ -250,7 +250,7 @@
       const top = g * 1.08;
       const X = x => L + (x - 2) / (Xmax - 2) * (W - L - R), Y = v => B - v / top * (B - T);
       for (let k = 0; k <= 4; k++) { const v = top * k / 4; el('line', { x1: L, y1: Y(v), x2: W - R, y2: Y(v), stroke: '#eef2f6' }, s); txt(s, 4, Y(v) + 4, fmt(v)); }
-      txt(s, L, B + 18, '2'); txt(s, W - R - 60, B + 18, fmt(Xmax));
+      txt(s, L, B + 18, '2'); txt(s, W - R, B + 18, fmt(Xmax), { 'text-anchor': 'end' });
       const n = 260, pa = [], pg = [], ps = [];
       for (let i = 0; i <= n; i++) {
         const x = 2 + (Xmax - 2) * i / n;
@@ -295,7 +295,7 @@
       el('polygon', { points: up.concat(dn.reverse()).join(' '), fill: 'rgba(15,143,132,.13)', stroke: '#0f8f84' }, s);
       el('polyline', { points: ms.join(' '), fill: 'none', stroke: '#e8731a', 'stroke-width': 2.5 }, s);
       txt(s, 4, Y(top * 0.85) + 4, '+' + fmt(top * 0.85)); txt(s, 4, M + 4, '0'); txt(s, 4, Y(-top * 0.85) + 4, '−' + fmt(top * 0.85));
-      txt(s, L, B + 22, '3,000'); txt(s, W - R - 70, B + 22, fmt(Xmax));
+      txt(s, L, B + 22, '3,000'); txt(s, W - R, B + 22, fmt(Xmax), { 'text-anchor': 'end' });
       txt(s, L + 6, T + 6, '초록 띠 = 약속한 범위   주황 선 = 실제 빗나간 개수');
     }
     sl.addEventListener('input', draw); draw();
