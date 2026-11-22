@@ -32,13 +32,13 @@ def kpi(label, id_, val="—"):
     return f'<div class="kpi"><small>{label}</small><b id="{id_}">{val}</b></div>'
 
 
-def head(title, desc):
+def head(title, desc, thumb="index"):
     ld = {"@context": "https://schema.org", "@type": "LearningResource", "name": title, "inLanguage": "ko",
           "author": {"@type": "Person", "name": "안상선"}, "educationalLevel": "입문", "dateModified": "2026-11-22",
           "about": ["리만 가설", "소수", "소수 개수 어림", "인터넷 암호"]}
     return f'''<!DOCTYPE html><html lang="ko"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
 <title>{E(title)}</title><meta name="description" content="{E(desc)}">
-<meta property="og:title" content="{E(title)}"><meta property="og:description" content="{E(desc)}"><meta property="og:type" content="article">
+<meta property="og:title" content="{E(title)}"><meta property="og:description" content="{E(desc)}"><meta property="og:type" content="article"><meta property="og:image" content="https://adminmrobo.github.io/riemann_hypothesis_lab/assets/thumbs/{thumb}.webp"><meta name="twitter:card" content="summary_large_image">
 <link rel="stylesheet" href="assets/lab.css"><script type="application/ld+json">{json.dumps(ld, ensure_ascii=False)}</script></head><body><div id="prog"></div>'''
 
 
@@ -47,21 +47,18 @@ def nav(links):
     return f'<nav class="top"><div class="row"><a class="logo" href="index.html">하루의 <i>첫 브리핑</i></a><div class="links">{a}</div></div></nav>'
 
 
-def cover(cap, cast):
-    imgs = "".join(f'<img src="assets/chars/{k}_{e}.webp" alt="{NAME[k]}" class="{c}">' for k, e, c in cast)
-    return f'''<div class="cover"><div class="frame"><svg class="grid" viewBox="0 0 1600 900" aria-hidden="true">
-<g stroke="#d5dbe2">{"".join(f'<line x1="{x}" y1="0" x2="{x}" y2="900"/>' for x in range(0, 1601, 80))}{"".join(f'<line x1="0" y1="{y}" x2="1600" y2="{y}"/>' for y in range(0, 901, 80))}</g>
-<line x1="1180" y1="60" x2="1180" y2="600" stroke="#0f8f84" stroke-width="10"/>
-{"".join(f'<circle cx="1180" cy="{560 - i * 52}" r="16" fill="#e8731a"/>' for i in range(10))}
-<text x="1210" y="90" font-size="40" fill="#0f8f84" font-family="sans-serif">1/2</text>
-<g font-family="sans-serif" font-size="46" fill="#1e2f6e" opacity=".55"><text x="120" y="140">2 3 5 7 11 13</text><text x="160" y="210">17 19 23 29 31</text></g></svg>
-<span class="cap">{E(cap)}</span><span class="badge">대체 표지 · 픽셀 그림 준비 중</span><div class="cast">{imgs}</div></div></div>'''
+def cover(cap, img, alt):
+    return f'''<div class="cover"><div class="frame"><img class="art" src="assets/img/{img}.webp" alt="{E(alt)}" width="1600" height="900"><span class="cap">{E(cap)}</span></div></div>'''
+
+
+def scene(name, alt):
+    return f'<figure class="scene"><img src="assets/img/{name}.webp" alt="{E(alt)}" width="1200" height="800" loading="lazy"><figcaption>{E(alt)}</figcaption></figure>'
 
 
 FOOT = f'''<footer><div class="wrap"><p>{AUTHOR}</p>
 <p>숫자는 모두 <code>code/check_riemann.py</code>로 검산했습니다(sympy·mpmath). 소식의 기준 시점은 2026-11-22입니다.</p>
 <p>참고: Riemann(1859) · Schoenfeld(1976) 약속 범위 식 · Cramér(1920) 소수 간격 · <a href="https://www.anthropic.com/research/riemann-zeta">Anthropic, Learning more about Claude's mathematical capabilities (2026-08-10)</a> · <a href="https://www.scientificamerican.com/article/anthropic-mathematician-claims-to-prove-riemann-hypothesis-most-famous-problem-in-all-of-math/">Scientific American, 알포게 발표 기사 (2026-11-20)</a> · Lean FRO·Mathlib 공동 성명(2026-11-21, 보도로 확인 — 원문 링크는 확인 후 추가)</p>
-<p class="hint">원자료 인포그래픽(사용자 제공)은 그대로 싣지 않고, 틀린 곳을 짚는 데만 참고했습니다.</p></div></footer>'''
+<p class="hint">표지·장면 그림: 16비트 픽셀아트(젠스파크 제작, 캐릭터 기준 fruitfly-lab-expressions). 원자료 인포그래픽(사용자 제공)은 그대로 싣지 않고, 틀린 곳을 짚는 데만 참고했습니다.</p></div></footer>'''
 
 STEPS = [
     ("s1", "1단계", "소수는 숫자의 레고 블록"),
@@ -103,7 +100,7 @@ def cast_grid():
 def build_index():
     s = head("하루의 첫 브리핑 — 리만 가설은 '약속'이다", "소수가 왜 중요한지, 소수 개수를 어떻게 어림하는지, 리만 가설이 어떤 약속인지 처음 오신 분을 위해 풀어 쓴 연구실 해설")
     s += nav([("briefing.html", "본문"), ("#dash", "대시보드 모음"), ("#cast", "등장인물")])
-    s += cover("연구실 회의실 · 하루의 첫 브리핑", [("sia", "e19", ""), ("haru", "e20", ""), ("moa", "e09", ""), ("x1", "e15", "s"), ("x2", "e09", "s"), ("x3", "e13", "s")])
+    s += cover("연구실 회의실 · 하루의 첫 브리핑", "cover_index", "회의실 화이트보드 앞에서 긴장한 하루가 브리핑을 시작하고, 시아·모아와 방청석 X1~X3가 지켜보는 픽셀 그림")
     s += f'''<header class="hero"><div class="wrap"><span class="kicker">연구실 해설 · 수학 특별편</span>
 <h1>하루의 첫 브리핑 — 리만 가설은 '약속'이다</h1>
 <p class="lead">2026년 11월, "리만 가설이 증명됐다"는 소식이 연구실에 들어왔습니다. 박사는 조수 하루에게 인턴들 앞에서 브리핑을 맡겼습니다. 하루는 떨리는 목소리로 시작합니다.</p>
@@ -130,9 +127,9 @@ def step_head(i):
 
 
 def build_briefing():
-    s = head("하루의 첫 브리핑 — 본문 | 리만 가설은 '약속'이다", "소수 블록, 소수의 쓰임, 소수 개수 어림, 리만 가설이라는 약속, 약속이 지켜지면 좋은 점 — 단계마다 복습·실험 대시보드")
+    s = head("하루의 첫 브리핑 — 본문 | 리만 가설은 '약속'이다", "소수 블록, 소수의 쓰임, 소수 개수 어림, 리만 가설이라는 약속, 약속이 지켜지면 좋은 점 — 단계마다 복습·실험 대시보드", "briefing")
     s += nav([("#" + i, n) for i, n, _ in STEPS] + [("#duel", "대결"), ("#kg", "색인")])
-    s += cover("회의실 화이트보드 앞 · 브리핑 시작 5분 전", [("doctor", "e08", "s"), ("haru", "e05", ""), ("sia", "e01", ""), ("moa", "e09", ""), ("jupanbot", "e16", "s")])
+    s += cover("회의실 화이트보드 앞 · 브리핑 시작 5분 전", "cover_briefing", "브리핑 5분 전, 긴장한 하루의 어깨를 박사가 두드리고 시아·모아·주판봇이 응원하는 픽셀 그림")
     s += f'''<header class="hero"><div class="wrap"><span class="kicker">본문 · 6단계 + 대결</span><h1>하루의 첫 브리핑</h1>
 <p class="byline">{AUTHOR} · 기준 시점 2026-11-22</p>
 {talk([("doctor", "e08", "리만 가설이 증명됐다는 소식, 다들 들었죠? 오늘은 하루가 인턴들에게 설명해 볼 거예요."),
@@ -145,6 +142,7 @@ def build_briefing():
 
     # ---------------- 1단계
     s += f'''<section class="room" id="s1"><div class="wrap">{step_head(0)}
+{scene("scene_s1", "주판봇이 숫자판을 걸러 소수 타일만 남기는 장면")}
 <div class="tags"><span class="tag how">방법: 나눠 보기</span><span class="tag day">일상: 레고 블록</span></div>
 {talk([("doctor", "e07", "택배 상자를 똑같은 크기의 작은 상자 여러 개로 나눌 수 없다면, 그게 가장 작은 블록이에요. 숫자에도 그런 블록이 있어요."),
        ("sia", "e01", "하루 선배, 소수가 정확히 뭐예요?"),
@@ -178,6 +176,7 @@ def build_briefing():
 
     # ---------------- 2단계
     s += f'''<section class="room" id="s2"><div class="wrap">{step_head(1)}
+{scene("scene_s2", "블록 두 개로 자물쇠를 만들고, 주판봇이 그 자물쇠를 쪼개느라 진땀 빼는 장면")}
 <div class="tags"><span class="tag how">방법: 곱하기 vs 되돌리기</span><span class="tag day">일상: 휴대폰 송금, 서랍 정리</span></div>
 {talk([("doctor", "e07", "여러분 휴대폰으로 송금할 때, 그 돈은 무엇이 지켜 줄까요?"),
        ("moa", "e09", "소수가 그렇게 대단해요? 그냥 나눠지지 않는 수잖아요."),
@@ -219,6 +218,7 @@ def build_briefing():
 
     # ---------------- 3단계
     s += f'''<section class="room" id="s3"><div class="wrap">{step_head(2)}
+{scene("scene_s3", "갈수록 간격이 멀어지는 버스 정류장 길 앞의 시아·모아·하루")}
 <div class="tags"><span class="tag how">방법: 직접 세기</span><span class="tag day">일상: 버스 정류장 간격</span></div>
 {talk([("doctor", "e07", "회사에서 '자물쇠용 소수를 하루에 몇 개 만들 수 있나?'라고 물으면 뭐부터 알아야 할까요?"),
        ("moa", "e09", "그 크기에 소수가 얼마나 많은지요!"),
@@ -251,6 +251,7 @@ def build_briefing():
 
     # ---------------- 4단계
     s += f'''<section class="room" id="s4"><div class="wrap">{step_head(3)}
+{scene("scene_s4", "거의 겹쳐 올라가는 두 선 앞에서 안도하는 하루")}
 <div class="tags"><span class="tag how">방법: 어림 공식</span><span class="tag day">일상: 일기예보 "내일 20도쯤"</span></div>
 {talk([("doctor", "e07", "309자리 수를 일일이 셀 수 없다면, 여러분은 어떻게 개수를 짐작하겠어요?"),
        ("sia", "e19", "곡선이 규칙적이니까 공식으로 맞히면 되지 않아요?"),
@@ -283,6 +284,7 @@ def build_briefing():
 
     # ---------------- 5단계
     s += f'''<section class="room" id="s5"><div class="wrap">{step_head(4)}
+{scene("scene_s5", "가운데 줄 위에 늘어선 특별한 점들을 초파리 연구원이 살펴보는 장면")}
 <div class="tags"><span class="tag how">방법: 약속(보증)</span><span class="tag day">일기예보 "20도 ± 2도"</span></div>
 {talk([("moa", "e09", "그래서 리만 가설이 뭐예요? 아까부터 그게 제일 궁금했어요."),
        ("haru", "e20", "(숨 고르고) 리만 가설은… '어림이 아무리 큰 수까지 가도 크게 틀리지 않는다'는 약속이에요."),
@@ -325,6 +327,7 @@ def build_briefing():
 
     # ---------------- 6단계
     s += f'''<section class="room" id="s6"><div class="wrap">{step_head(5)}
+{scene("scene_s6", "기초 위에 층이 쌓이는 건물과 잠긴 채 빛나는 자물쇠")}
 <div class="tags"><span class="tag how">방법: 약속을 믿고 쌓기</span><span class="tag day">일상: 건물 기초 승인</span></div>
 {talk([("doctor", "e07", "회사 신입이 '그래서 이 약속이 지켜지면 뭐가 좋아요?'라고 묻는다면, 뭐라고 답하겠어요?"),
        ("sia", "e19", "음… 어림을 더 믿을 수 있다?"),
@@ -362,6 +365,7 @@ def build_briefing():
 
     # ---------------- 대결
     s += f'''<section class="room" id="duel"><div class="wrap"><span class="roomno">대결</span><h2>소수 개수 맞히기 — 시아 vs 모아</h2>
+{scene("scene_duel", "시아(계산기)와 모아(눈금 노트)의 대결, 가운데 심판 주판봇과 깃발 든 하루")}
 {talk([("haru", "e10", "마지막은 대결이에요! 시아는 간단한 어림, 모아는 좋은 어림. 판정은 주판봇이 직접 세어서!"),
        ("sia", "e19", "간단한 게 최고죠. 나누기 한 번이면 끝!"),
        ("moa", "e09", "저는 '몇 개 중 1개'를 차곡차곡 더할게요."),
@@ -391,6 +395,7 @@ def build_briefing():
                        "concepts": [{"name": a, "definition": b, "anchor": c} for a, b, c in terms],
                        "order": [t for _, _, t in STEPS]}, ensure_ascii=False)
     s += f'''<section class="room" id="outro"><div class="wrap"><span class="roomno">아웃트로</span><h2>브리핑을 마치며</h2>
+{scene("scene_outro", "물컵을 든 하루가 안도하고, 이긴 모아와 웃는 시아, 꽃가루를 뿌리는 X1~X3")}
 {talk([("haru", "e12", "후… 끝났다! 다들 끝까지 들어 줘서 고마워요."),
        ("doctor", "e16", "첫 브리핑 치고 아주 좋았어요. 오늘의 한 줄 — 소수는 숫자의 블록이고, 리만 가설은 그 블록이 어디에 얼마나 있는지에 대한 약속입니다."),
        ("moa", "e16", "왜 대단한지 이제 알겠어요. 160년 넘게 아무도 그 약속을 증명하지 못했던 거네요."),
