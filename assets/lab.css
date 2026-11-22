@@ -235,5 +235,5 @@ nav.top .i18n-pick select{max-width:34vw}
 @media (max-width:480px){.dash input[type=range]{width:190px}}
 @media (max-width:600px){.dash .svgnote{font-size:22px}}
 .scene{margin:14px 0 18px}
-.scene img{width:100%;height:auto;display:block;border-radius:14px;border:1px solid var(--rule);image-rendering:pixelated}
+.scene img{width:100%;height:auto;display:block;border-radius:14px;border:1px solid var(--rule)}
 .scene figcaption{font-size:13px;color:var(--muted);margin-top:6px;text-align:center}
