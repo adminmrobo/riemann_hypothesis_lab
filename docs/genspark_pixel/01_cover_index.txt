@@ -8,10 +8,10 @@
 
 ---
 
-Please create 1 image, aspect ratio 16:9, about 1600x900. Use the attached reference sprites for all characters.
+Please create 1 image, aspect ratio 16:9, at the highest resolution available (ideally 3200x1800 or larger). Use the attached reference sprites for all characters.
 
 COMMON STYLE (apply to every image):
-16-bit SNES-era RPG pixel art, crisp pixel edges, limited palette, dithering allowed, no anti-aliased blur, no smooth anime shading, no 3D render. Bright daytime research lab: white walls and white floor tiles dominate the background, accents in soft teal, orange, navy and red. Characters must match the attached reference sprites exactly (same faces, hair, outfits), drawn as small chibi pixel sprites about 48–64 px tall in the scene:
+16-bit SNES-era RPG pixel art rendered at high resolution with clean, sharp, crisp pixel edges (no blur, no JPEG artifacts, no upscaling smear), limited palette, dithering allowed, no anti-aliased blur, no smooth anime shading, no 3D render. Bright daytime research lab: white walls and white floor tiles dominate the background, accents in soft teal, orange, navy and red. Characters must match the attached reference sprites exactly (same faces, hair, outfits), drawn as small chibi pixel sprites about 48–64 px tall in the scene:
 - Professor: spiky black hair with one white streak, teal rectangular glasses, white lab coat over black vest and tie.
 - Assistant Haru: long pink hair with a blue streak, two hair buns, lavender hoodie under a white lab coat. Today she is nervous (small sweat drop) unless the scene says otherwise.
 - Fruit-fly researcher: navy round helmet with big red compound eyes and blue tubes, black insect body in a white lab coat.
