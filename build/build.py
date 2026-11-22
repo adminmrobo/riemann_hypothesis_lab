@@ -48,17 +48,17 @@ def nav(links):
 
 
 def cover(cap, img, alt):
-    return f'''<div class="cover"><div class="frame"><img class="art" src="assets/img/{img}.webp" alt="{E(alt)}" width="1600" height="900"><span class="cap">{E(cap)}</span></div></div>'''
+    return f'''<div class="cover"><div class="frame"><img class="art" src="assets/img/{img}.webp" srcset="assets/img/{img}.webp 1600w, assets/img/{img}@2x.webp 3200w" sizes="(max-width:1100px) 100vw, 1080px" alt="{E(alt)}" width="1600" height="900"><span class="cap">{E(cap)}</span></div></div>'''
 
 
 def scene(name, alt):
-    return f'<figure class="scene"><img src="assets/img/{name}.webp" alt="{E(alt)}" width="1200" height="800" loading="lazy"><figcaption>{E(alt)}</figcaption></figure>'
+    return f'<figure class="scene"><img src="assets/img/{name}.webp" srcset="assets/img/{name}.webp 1200w, assets/img/{name}@2x.webp 2400w" sizes="(max-width:1000px) 100vw, 960px" alt="{E(alt)}" width="1200" height="800" loading="lazy"><figcaption>{E(alt)}</figcaption></figure>'
 
 
 FOOT = f'''<footer><div class="wrap"><p>{AUTHOR}</p>
 <p>숫자는 모두 <code>code/check_riemann.py</code>로 검산했습니다(sympy·mpmath). 소식의 기준 시점은 2026-11-22입니다.</p>
 <p>참고: Riemann(1859) · Schoenfeld(1976) 약속 범위 식 · Cramér(1920) 소수 간격 · <a href="https://www.anthropic.com/research/riemann-zeta">Anthropic, Learning more about Claude's mathematical capabilities (2026-08-10)</a> · <a href="https://www.scientificamerican.com/article/anthropic-mathematician-claims-to-prove-riemann-hypothesis-most-famous-problem-in-all-of-math/">Scientific American, 알포게 발표 기사 (2026-11-20)</a> · Lean FRO·Mathlib 공동 성명(2026-11-21, 보도로 확인 — 원문 링크는 확인 후 추가)</p>
-<p class="hint">표지·장면 그림: 16비트 픽셀아트(젠스파크 제작, 캐릭터 기준 fruitfly-lab-expressions). 원자료 인포그래픽(사용자 제공)은 그대로 싣지 않고, 틀린 곳을 짚는 데만 참고했습니다.</p></div></footer>'''
+<p class="hint">표지·장면 그림: 16비트 픽셀아트(젠스파크 제작, 원본 1360×768·1248×832을 2배 픽셀 복제 후 고해상도화, 캐릭터 기준 fruitfly-lab-expressions). 원자료 인포그래픽(사용자 제공)은 그대로 싣지 않고, 틀린 곳을 짚는 데만 참고했습니다.</p></div></footer>'''
 
 STEPS = [
     ("s1", "1단계", "소수는 숫자의 레고 블록"),
