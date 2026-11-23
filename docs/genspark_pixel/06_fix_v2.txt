@@ -1,0 +1,18 @@
+# 대화 6 — v2.0 그림 2장 "인물만 편집" (새로 그리지 않음)
+
+[젠스파크에 붙이는 순서]
+1. 고칠 그림(scene_prologue.png 또는 scene_claude.png)을 올린다.
+2. refs/ref_fruitfly.png 와 refs/ref_doctor.png 를 함께 올린다.
+3. 아래 요청문 중 해당하는 것 하나만 붙인다. 그림 하나당 대화 하나.
+
+---
+
+EDIT 1 — scene_prologue.png
+Edit this image only; keep everything else exactly the same (layout, pixel style, colors, resolution 2400x1600, all other characters).
+Problem: the professor appears twice. The character in the CENTER who is poking the wooden abacus on the robot's belly must be the FRUIT-FLY RESEARCHER from the attached reference (navy round helmet with big red compound eyes and blue tubes, black insect body, white lab coat), NOT the professor.
+Replace only that center character with the fruit-fly researcher, keeping the same pose: leaning in with a teasing smirk, one finger poking the abacus. The professor sipping coffee by the door on the right stays as is. No text.
+
+EDIT 2 — scene_claude.png
+Edit this image only; keep everything else exactly the same (layout, pixel style, colors, resolution 2400x1600, helper robots, checking machine, other characters).
+Problem: the seated mathematician on the left looks like the professor (same spiky black hair with a white streak and teal glasses), and the professor also stands on the right, so readers will think the professor is drawn twice.
+Change only the seated mathematician's head: short neat brown hair with no white streak, round thin black glasses, a calm focused face. Keep the navy sweater, the notebook and the pose. The professor standing on the right stays as is. No text.
