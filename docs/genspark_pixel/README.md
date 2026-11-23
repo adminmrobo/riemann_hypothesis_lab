@@ -8,10 +8,14 @@
 | 2 | 02_cover_briefing.txt | 1 | 16:9 |
 | 3 | 03_scenes_s1_s4.txt | 4 | 3:2 (1200×800) |
 | 4 | 04_scenes_s5_outro.txt | 4 | 3:2 |
+| 5 | 05_scenes_v2.txt | 3 | 3:2 — v2.0 새 장면(scene_prologue·scene_claude·scene_reconcile). 기존 10장은 그대로 재사용 |
 
 - refs/: 캐릭터 기본 그림 10장 — 박사·조수 하루·초파리 연구원·주판봇·시아·모아(fruitfly-lab-expressions E13_neutral), 방청석 X1·X2·X3(E13_neutral), 긴장한 하루(E20_sweat_drop). 모든 대화에 함께 올린다.
 - 대화 2부터는 대화 1에서 받은 cover_index.png도 "그림체 참고"로 올린다.
 - 참고용 원자료 인포그래픽(리만 가설 설명판·꽃 그림)은 올리지 않는다. 그림체가 섞이지 않게 글로만 묘사했다.
+
+## v2.0에서 쓰지 않는 그림
+- scene_s4(두 선과 안도하는 하루)는 v2.0 본문에서 빠졌다. 파일은 남겨 둔다.
 
 ## 검수 (받은 뒤)
 - [ ] 16비트 픽셀아트인가 (매끈한 애니메이션 채색·3D 렌더가 아님)
@@ -24,6 +28,7 @@
 ## 저장 이름 체크리스트
 - [ ] cover_index.png · cover_briefing.png (1600×900)
 - [ ] scene_s1.png ~ scene_s6.png · scene_duel.png · scene_outro.png (1200×800)
+- [ ] v2.0: scene_prologue.png · scene_claude.png · scene_reconcile.png (1200×800) — 도우미 로봇에 회사 로고·상표가 없는지 확인
 - [ ] thumbs/index.webp · thumbs/briefing.webp (표지에서 960폭으로 자름 — 받은 뒤 이쪽에서 처리)
 - [ ] og/ 폴더 — 페이지마다 og:image (받은 뒤 이쪽에서 처리)
 

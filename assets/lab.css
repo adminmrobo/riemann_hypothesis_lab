@@ -237,3 +237,16 @@ nav.top .i18n-pick select{max-width:34vw}
 .scene{margin:14px 0 18px}
 .scene img{width:100%;height:auto;display:block;border-radius:14px;border:1px solid var(--rule)}
 .scene figcaption{font-size:13px;color:var(--muted);margin-top:6px;text-align:center}
+/* v2.0 — 그림 준비 중 자리, 시간표, 연구실 연결 상자 */
+.scene.pending .ph{aspect-ratio:3/2;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:8px;border:2px dashed var(--rule);border-radius:14px;background:var(--panel);color:var(--muted);text-align:center;padding:20px;font-size:14px}
+.scene.pending .ph b{color:var(--teal);font-size:15px}
+.tl{list-style:none;margin:10px 0;padding:0;border-left:3px solid var(--teal)}
+.tl li{position:relative;margin:0 0 12px;padding-left:18px}
+.tl li:before{content:"";position:absolute;left:-8px;top:7px;width:13px;height:13px;border-radius:50%;background:#fff;border:3px solid var(--teal)}
+.tl li b{display:inline-block;min-width:96px;color:var(--navy)}
+.labx{border:1px solid var(--teal);border-radius:12px;padding:14px 18px;margin:16px 0;background:#f2fbfa}
+.labx h4{margin:0 0 6px;color:var(--teal);font-size:15px}
+.labx a{overflow-wrap:anywhere}
+.aibox{border:1px solid #c9302c;background:#fff7f6;border-radius:12px;padding:18px 20px;margin:16px 0}
+.aibox h4{margin:0 0 8px;color:#c9302c}
+.bub strong{font-weight:800;color:var(--navy)}
