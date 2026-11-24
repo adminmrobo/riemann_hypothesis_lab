@@ -1,0 +1,32 @@
+# 대화 7 — 2부 「주판봇의 증명 나무」 새 그림 2장
+
+[젠스파크에 붙이는 순서]
+1. refs 폴더의 캐릭터 기본 그림(ref_*.png)을 먼저 올린다.
+2. 이미 받은 cover_index.png와 scene_claude.png를 "그림체 참고"로 함께 올린다.
+3. 아래 요청문을 그대로 붙인다.
+4. 저장 이름대로 저장해 보내 주면 assets/img에 넣고(1x·2x WebP) 다시 빌드한다. 그 전까지 페이지에는 "그림 준비 중" 자리가 보인다.
+
+---
+
+Please create 2 images at the highest resolution available. Use the attached reference sprites for all characters, and match the pixel style of the attached cover_index and scene_claude images.
+
+COMMON STYLE (apply to every image):
+16-bit SNES-era RPG pixel art rendered at high resolution with clean, sharp, crisp pixel edges (no blur, no JPEG artifacts, no upscaling smear), limited palette, dithering allowed, no anti-aliased blur, no smooth anime shading, no 3D render. Bright daytime research lab: white walls and white floor tiles dominate the background, accents in soft teal, orange, navy and red. Characters must match the attached reference sprites exactly (same faces, hair, outfits), drawn as small chibi pixel sprites about 48–64 px tall in the scene:
+- Professor: spiky black hair with one white streak, teal rectangular glasses, white lab coat over black vest and tie.
+- Assistant Haru: long pink hair with a blue streak, two hair buns, lavender hoodie under a white lab coat. Today she is nervous (small sweat drop) unless the scene says otherwise.
+- Fruit-fly researcher: navy round helmet with big red compound eyes and blue tubes, black insect body in a white lab coat.
+- Abacus robot: beige boxy CRT-monitor head with a green pixel smile and a small antenna, wooden abacus belly, gray arms, tank treads.
+- Intern Sia: long straight black hair, black maid-style lab dress with white frilled apron and gray bow.
+- Intern Moa: long light-brown hair, white maid headband, mustard maid-style dress with white apron and red plaid bow.
+- Audience X1: small shadow-black chibi with a long black ponytail and a big pink bow, white dot eyes, pink cheeks.
+- Audience X2: small shadow-black chibi with a dark beret and round teal glasses.
+- Audience X3: small shadow-black chibi in a cat-ear hood with two gold-tipped hoodie strings.
+Do NOT draw any text, letters, numbers or symbols with writing. Number cards and boards are drawn as blank tiles or dots only.
+Do NOT draw any company logo, brand mark or real product. The AI helpers in IMAGE 2 are generic, original tiny robots.
+Do NOT draw any company logo, brand mark, real product, or readable text.
+
+IMAGE 1 — save as cover_part2.png  (aspect ratio 16:9, ideally 3200x1800)  (2부 표지: 주판봇의 첫 브리핑)
+The next morning in the white lab meeting room. This time the ABACUS ROBOT is the presenter: it stands proudly in front of the whiteboard on its tank treads, holding its wooden abacus high above its head with one arm, the other arm pointing at a simple drawing on the whiteboard of a tree shape (one vertical trunk line, a few side branches, an orange dot at the top; no words). Haru stands beside it holding a pointer, visibly relieved and smiling (not nervous today). The fruit-fly researcher sits in the front row with arms crossed and a skeptical half-smile. Sia and Moa sit taking notes. The professor leans on the back wall with a coffee cup, amused. X1, X2, X3 cheer from the side.
+
+IMAGE 2 — save as scene_p2_tree.png  (aspect ratio 3:2, ideally 2400x1600)  (2부 3장: 증명 나무)
+In the white lab, a huge glowing tree made of light rises from the floor to the ceiling: one bright violet-white central trunk, many soft purple side branches ending in small glowing dots, and a big orange glowing dot at the very top. Around the base and in the background, many faint gray short sticks lie scattered like dust. The abacus robot stands at the base looking up the trunk and clicking its abacus beads, counting the trunk steps. The fruit-fly researcher crouches nearby examining the gray dust sticks with a magnifier, surprised. Sia points at the top orange dot; Moa writes in a notebook. Haru and the professor watch from the side. Daylight, white background, no dark night mood.

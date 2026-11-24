@@ -250,3 +250,12 @@ nav.top .i18n-pick select{max-width:34vw}
 .aibox{border:1px solid #c9302c;background:#fff7f6;border-radius:12px;padding:18px 20px;margin:16px 0}
 .aibox h4{margin:0 0 8px;color:#c9302c}
 .bub strong{font-weight:800;color:var(--navy)}
+/* 2부 — 채점기 체험 줄, 증명 나무 */
+.pl{display:grid;grid-template-columns:28px 1fr auto;gap:6px 10px;align-items:center;padding:10px 12px;border:1px solid var(--rule);border-radius:10px;margin:6px 0;background:#fff}
+.pl .pn{width:26px;height:26px;border-radius:50%;background:var(--navy);color:#fff;display:flex;align-items:center;justify-content:center;font-size:13px;font-weight:700}
+.pl .pt{font-weight:600}.pl .pt.blank{color:var(--muted);font-style:italic}.pl .pt.wrong{color:var(--red)}
+.pl .pm{grid-column:2/4;font-size:14px;min-height:0}.pl .pm.ok{color:var(--green)}.pl .pm.no{color:var(--red);font-weight:700}
+#pb-svg{width:100%;max-width:640px;display:block;margin:0 auto;background:#fafbfd;border-radius:12px}
+.minitree{width:100%;max-width:560px;display:block;margin:10px auto}
+@media (max-width:600px){.pl{grid-template-columns:26px 1fr}.pl select{grid-column:2}}
+#pa-goal{width:auto;max-width:100%}

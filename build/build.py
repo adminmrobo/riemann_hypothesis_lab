@@ -56,6 +56,8 @@ def nav(links):
 
 
 def cover(cap, img, alt):
+    if not (ROOT / "assets/img" / f"{img}.webp").exists():
+        return f'<div class="cover"><div class="frame"><figure class="scene pending" style="margin:0"><div class="ph" style="aspect-ratio:16/9"><b>표지 그림 준비 중</b><span>{E(alt)}</span><small>{img}.webp</small></div></figure></div></div>'
     return f'''<div class="cover"><div class="frame"><img class="art" src="assets/img/{img}.webp" srcset="assets/img/{img}.webp 1600w, assets/img/{img}@2x.webp 3200w" sizes="(max-width:1100px) 100vw, 1080px" alt="{E(alt)}" width="1600" height="900"><span class="cap">{E(cap)}</span></div></div>'''
 
 
@@ -123,7 +125,7 @@ def cast_grid():
 # ------------------------------------------------------------------ 목차
 def build_index():
     s = head(TITLE, "AI와 수학자가 리만 가설을 증명했다는 2026년 11월 소식을, 주판봇과 초파리의 말다툼으로 쉽게 풀어 쓴 연구실 해설. 세기와 증명은 무엇이 다른가.")
-    s += nav([("briefing.html", "본문"), ("#dash", "대시보드 모음"), ("#cast", "등장인물")])
+    s += nav([("briefing.html", "1부 본문"), ("part2.html", "2부"), ("#dash", "대시보드 모음"), ("#cast", "등장인물")])
     s += cover("연구실 회의실 · 하루의 첫 브리핑", "cover_index", "회의실 화이트보드 앞에서 긴장한 하루가 브리핑을 시작하고, 시아·모아와 방청석 X1~X3가 지켜보는 픽셀 그림")
     s += f'''<header class="hero"><div class="wrap"><span class="kicker">연구실 해설 · 수학 특별편 v2.0</span>
 <h1>{E(TITLE)}</h1>
@@ -132,10 +134,15 @@ def build_index():
 <section><div class="wrap">{THREE}</div></section>
 <section id="cast"><div class="wrap"><h2>등장인물</h2>{cast_grid()}</div></section>
 <section><div class="wrap"><h2>오늘의 흐름</h2><p>장 끝에서 누군가 던진 질문에 다음 장이 답합니다.</p>{flow("briefing.html")}</div></section>
+<section id="parts"><div class="wrap"><h2>1부 · 2부</h2><div class="cards">
+<a class="card" href="briefing.html">{face("haru", "e10")}<span class="n">1부 · 하루의 브리핑</span><h3>주판봇은 왜 리만 가설을 못 풀었나</h3><p>소수와 '몇 개 중 1개', 세기와 증명의 차이, 클로드와 수학자가 한 일, 우리 일에 바뀌는 것.</p></a>
+<a class="card" href="part2.html">{face("jupanbot", "e16")}<span class="n">2부 · 주판봇의 브리핑</span><h3>주판봇의 증명 나무 — Lean은 증명을 어떻게 검사하나</h3><p>채점기는 세지 않고 따진다. 증명은 왜 나무 모양인가. 통과했으면 무조건 맞을까.</p></a></div></div></section>
 <section id="dash"><div class="wrap"><h2>복습·실험 대시보드</h2><p>본문을 읽은 뒤, 또는 읽기 전에 바로 눌러 봐도 됩니다.</p><div class="cards">
 <a class="card" href="briefing.html#d1">{face("jupanbot", "e16")}<span class="n">1장 대시보드 ①</span><h3>주판봇의 체 거르기</h3><p>1~100에서 배수를 지우면 소수만 남습니다. 쪼개기 기계와 소수 감별 퀴즈도.</p></a>
 <a class="card" href="briefing.html#d3">{face("moa", "e09")}<span class="n">1장 대시보드 ②</span><h3>소수 세기 관측소</h3><p>100에서 100만까지 소수가 "몇 개 중 1개"로 드물어지는 곡선.</p></a>
 <a class="card" href="briefing.html#d5">{face("fruitfly", "e09")}<span class="n">2장 대시보드</span><h3>약속 감시판</h3><p>빗나감이 약속 범위 안에 있는지, 점 하나를 가운데 줄 밖으로 옮기면 어떻게 되는지.</p></a>
+<a class="card" href="part2.html#pa">{face("jupanbot", "e04")}<span class="n">2부 대시보드 ①</span><h3>채점기 체험</h3><p>짝수 + 짝수 증명의 줄을 비우거나 틀리게 바꾸고 채점기에 넣어 보기.</p></a>
+<a class="card" href="part2.html#pb">{face("fruitfly", "e16")}<span class="n">2부 대시보드 ②</span><h3>증명 나무</h3><p>줄기·가지·먼지. 크기를 키워도 모양은 같다.</p></a>
 <a class="card" href="briefing.html#duel">{face("sia", "e19")}<span class="n">보너스</span><h3>소수 개수 맞히기 대결</h3><p>시아의 간단한 어림 vs 모아의 좋은 어림. 주판봇이 직접 세어 판정.</p></a></div></div></section>
 {FOOT}<script src="assets/rh.js"></script></body></html>'''
     (ROOT / "index.html").write_text(s, encoding="utf-8")
@@ -149,7 +156,7 @@ def step_head(i):
 # ------------------------------------------------------------------ 본문
 def build_briefing():
     s = head(TITLE + " | 본문", "프롤로그·4장·에필로그. 소수와 '몇 개 중 1개', 세기와 증명의 차이, 클로드와 수학자가 한 일, 우리 일에 바뀌는 것", "briefing")
-    s += nav([("#" + i, n) for i, n, _ in STEPS] + [("#duel", "보너스"), ("#kg", "색인")])
+    s += nav([("#" + i, n) for i, n, _ in STEPS] + [("#duel", "보너스"), ("part2.html", "2부"), ("#kg", "색인")])
     s += cover("아침 소식 뒤, 오후 브리핑 5분 전", "cover_briefing", "브리핑 5분 전, 긴장한 하루의 어깨를 박사가 두드리고 시아·모아·주판봇이 응원하는 픽셀 그림")
     s += f'''<header class="hero"><div class="wrap"><span class="kicker">본문 · 프롤로그 + 4장 + 에필로그</span><h1>{E(TITLE)}</h1>
 <p class="byline">{AUTHOR} · 기준 시점 {DATE}</p>
@@ -338,7 +345,7 @@ def build_briefing():
        ("moa", "e16", "저는 그 1,700만 줄 중에 딱 한 줄만이라도 읽어 보고 싶어요.")])}
 {react([("x1", "e01", "하루 최고!"), ("x2", "e16", "물 마셔, 물!"), ("x3", "e01", "(주판봇과 초파리에게 박수)")])}
 {scene("scene_outro", "물컵을 든 하루가 안도하고, 웃는 시아·모아, 꽃가루를 뿌리는 X1~X3")}
-<div class="cards"><div class="card soon">{face("haru", "e19")}<span class="n">다음 편 · 준비 중</span><h3>특별한 점들은 왜 가운데 줄에 설까</h3><p>소수 개수 그래프를 여러 겹의 흔들림으로 나눠 보는 이야기. 힐베르트 공간 해설의 "물결 조각으로 나누기"와 이어집니다.</p></div>
+<div class="cards"><a class="card" href="part2.html">{face("jupanbot", "e16")}<span class="n">2부 · 이어서 읽기</span><h3>주판봇의 증명 나무</h3><p>다음 날 아침, 이번엔 주판봇이 브리핑합니다. Lean 채점기는 무엇을 보나, 증명은 왜 나무 모양인가.</p></a><div class="card soon">{face("haru", "e19")}<span class="n">다음 편 · 준비 중</span><h3>특별한 점들은 왜 가운데 줄에 설까</h3><p>소수 개수 그래프를 여러 겹의 흔들림으로 나눠 보는 이야기. 힐베르트 공간 해설의 "물결 조각으로 나누기"와 이어집니다.</p></div>
 <a class="card" href="{LAB}hilbert_space_lab/">{face("moa", "e09")}<span class="n">함께 보기</span><h3>힐베르트 공간 해설</h3><p>1 + 1/4 + 1/9 + … = π²/6 이 나오는 5번 방.</p></a></div>
 </div></section>'''
 
@@ -385,7 +392,9 @@ def build_briefing():
 if __name__ == "__main__":
     build_index()
     build_briefing()
-    print("built index.html, briefing.html")
+    import part2
+    part2.build_part2()
+    print("built index.html, briefing.html, part2.html")
 
 
 # ── 지식 색인 다시 덧붙이기 (kg/pages/, ai-lab-retrofit autokg) ──
