@@ -1,0 +1,239 @@
+{
+ "version": "1.0",
+ "page": "briefing",
+ "nodes": [
+  {
+   "id": "lab:concept/riemann-hypothesis",
+   "type": "Concept",
+   "label": {
+    "ko": "리만 가설",
+    "en": "Riemann hypothesis"
+   },
+   "page": "briefing",
+   "anchor": "#prog",
+   "level": 3,
+   "status": "known",
+   "confidence": "medium",
+   "coverage": "explained",
+   "domain": [
+    "math"
+   ],
+   "match": [],
+   "auto": "autokg-2026-11-24"
+  },
+  {
+   "id": "lab:concept/llm-agent",
+   "type": "Concept",
+   "label": {
+    "ko": "에이전트",
+    "en": "AI agent"
+   },
+   "page": "briefing",
+   "anchor": "#c3",
+   "level": 2,
+   "status": "known",
+   "confidence": "medium",
+   "coverage": "explained",
+   "domain": [
+    "math",
+    "logic",
+    "llm"
+   ],
+   "match": [],
+   "auto": "autokg-2026-11-24",
+   "definition": {
+    "ko": "목표를 받아 도구를 부르고 여러 단계를 스스로 실행하는 AI 시스템."
+   }
+  },
+  {
+   "id": "lab:concept/hilbert-space",
+   "type": "Concept",
+   "label": {
+    "ko": "힐베르트 공간",
+    "en": "Hilbert space"
+   },
+   "page": "briefing",
+   "anchor": "#epi",
+   "level": 2,
+   "status": "known",
+   "confidence": "medium",
+   "coverage": "explained",
+   "domain": [
+    "math",
+    "geom",
+    "ai"
+   ],
+   "match": [],
+   "auto": "autokg-2026-11-24",
+   "definition": {
+    "ko": "겹침 점수(내적)가 있고 빈틈이 없는(완비) 방."
+   }
+  },
+  {
+   "id": "lab:concept/dashboards",
+   "type": "Concept",
+   "label": {
+    "ko": "대시보드",
+    "en": "Dashboards"
+   },
+   "page": "briefing",
+   "anchor": "#prog",
+   "level": 1,
+   "status": "known",
+   "confidence": "medium",
+   "coverage": "explained",
+   "domain": [
+    "math",
+    "data"
+   ],
+   "match": [],
+   "auto": "autokg-2026-11-24"
+  },
+  {
+   "id": "lab:concept/zeta-function",
+   "type": "Concept",
+   "label": {
+    "ko": "제타 함수",
+    "en": "Zeta function"
+   },
+   "page": "briefing",
+   "anchor": "#d5-lmsg",
+   "level": 3,
+   "status": "known",
+   "confidence": "medium",
+   "coverage": "mentioned",
+   "domain": [
+    "math"
+   ],
+   "match": [],
+   "auto": "autokg-2026-11-24"
+  },
+  {
+   "id": "lab:topic/riemann-hypothesis",
+   "type": "Topic",
+   "label": {
+    "ko": "리만 가설",
+    "en": "Riemann hypothesis"
+   },
+   "page": "briefing",
+   "anchor": "#kg",
+   "level": 3,
+   "status": "known",
+   "confidence": "high",
+   "coverage": "mentioned",
+   "domain": [
+    "math"
+   ],
+   "match": []
+  },
+  {
+   "id": "lab:topic/mdp",
+   "type": "Topic",
+   "label": {
+    "ko": "마르코프 결정 과정",
+    "en": "Markov decision process"
+   },
+   "page": "briefing",
+   "anchor": "#kg",
+   "level": 3,
+   "status": "known",
+   "confidence": "high",
+   "coverage": "mentioned",
+   "domain": [
+    "ai"
+   ],
+   "match": []
+  },
+  {
+   "id": "lab:topic/hilbert-space",
+   "type": "Topic",
+   "label": {
+    "ko": "힐베르트 공간",
+    "en": "Hilbert space"
+   },
+   "page": "briefing",
+   "anchor": "#kg",
+   "level": 3,
+   "status": "known",
+   "confidence": "high",
+   "coverage": "mentioned",
+   "domain": [
+    "math"
+   ],
+   "match": []
+  },
+  {
+   "id": "lab:topic/dashboards",
+   "type": "Topic",
+   "label": {
+    "ko": "대시보드",
+    "en": "Dashboards"
+   },
+   "page": "briefing",
+   "anchor": "#kg",
+   "level": 1,
+   "status": "known",
+   "confidence": "high",
+   "coverage": "mentioned",
+   "domain": [
+    "data"
+   ],
+   "match": []
+  },
+  {
+   "id": "lab:topic/zeta-function",
+   "type": "Topic",
+   "label": {
+    "ko": "제타 함수",
+    "en": "Zeta function"
+   },
+   "page": "briefing",
+   "anchor": "#kg",
+   "level": 3,
+   "status": "known",
+   "confidence": "high",
+   "coverage": "mentioned",
+   "domain": [
+    "math"
+   ],
+   "match": []
+  }
+ ],
+ "edges": [
+  {
+   "s": "lab:concept/riemann-hypothesis",
+   "p": "lab:broader",
+   "o": "lab:topic/riemann-hypothesis",
+   "anchor": "#prog",
+   "confidence": "medium"
+  },
+  {
+   "s": "lab:concept/llm-agent",
+   "p": "lab:broader",
+   "o": "lab:topic/mdp",
+   "anchor": "#c3",
+   "confidence": "medium"
+  },
+  {
+   "s": "lab:concept/hilbert-space",
+   "p": "lab:broader",
+   "o": "lab:topic/hilbert-space",
+   "anchor": "#epi",
+   "confidence": "medium"
+  },
+  {
+   "s": "lab:concept/dashboards",
+   "p": "lab:broader",
+   "o": "lab:topic/dashboards",
+   "anchor": "#prog",
+   "confidence": "medium"
+  },
+  {
+   "s": "lab:concept/zeta-function",
+   "p": "lab:broader",
+   "o": "lab:topic/zeta-function",
+   "anchor": "#d5-lmsg",
+   "confidence": "medium"
+  }
+ ]
+}
